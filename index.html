@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Zambia</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #1d2939; background: #f5f8fc; line-height: 1.6; }
+    .container { width: min(1100px, 90%); margin: auto; }
+    header { background: #123d72; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 8px #0003; }
+    nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { color: white; font-size: 1.3rem; font-weight: bold; text-decoration: none; }
+    .links { display: flex; gap: 22px; }
+    .links a { color: white; text-decoration: none; font-weight: bold; }
+    .links a:hover { color: #ffd166; }
+    .hero { min-height: 420px; display: grid; place-items: center; text-align: center; color: white; background: linear-gradient(#123d72bb, #123d72bb), url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80') center/cover; }
+    .hero h1 { font-size: clamp(2.3rem, 6vw, 4.3rem); margin: 0; }
+    .hero p { font-size: 1.15rem; max-width: 650px; margin: 14px auto 25px; }
+    .button { display: inline-block; padding: 12px 22px; background: #f1a83b; color: #172b4d; text-decoration: none; border-radius: 6px; font-weight: bold; }
+    section { padding: 70px 0; }
+    h2 { color: #123d72; font-size: 2rem; margin-top: 0; }
+    .intro { max-width: 720px; margin-bottom: 25px; }
+    .slider { position: relative; overflow: hidden; height: min(56vw, 480px); border-radius: 12px; box-shadow: 0 10px 24px #123d7230; background: #ccd8e8; }
+    .slider img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .caption { position: absolute; left: 18px; bottom: 18px; background: #000b; color: white; padding: 8px 12px; border-radius: 5px; }
+    .slide-button { position: absolute; top: 50%; transform: translateY(-50%); border: 0; width: 45px; height: 45px; border-radius: 50%; background: #fffd; color: #123d72; font-size: 1.5rem; cursor: pointer; }
+    .slide-button:hover { background: #f1a83b; color: white; }
+    #previous { left: 16px; } #next { right: 16px; }
+    .dots { display: flex; justify-content: center; gap: 9px; margin-top: 17px; }
+    .dot { width: 12px; height: 12px; padding: 0; border-radius: 50%; border: 0; background: #a7b7ca; cursor: pointer; }
+    .dot.active { background: #123d72; }
+    .video-section { background: white; }
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+    video { width: 100%; border-radius: 12px; background: black; box-shadow: 0 10px 24px #123d7230; }
+    footer { background: #123d72; color: white; text-align: center; padding: 25px; }
+    @media (max-width: 650px) { nav, .video-grid { display: grid; grid-template-columns: 1fr; } nav { padding: 14px 0; } .links { gap: 14px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">Explore Zambia</a>
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#video">Video</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Discover Beautiful Places</h1>
+        <p>A simple website made with HTML, CSS, and JavaScript. It has a navigation bar, slideshow, video section, and footer.</p>
+        <a class="button" href="#gallery">View Gallery</a>
+      </div>
+    </section>
+
+    <section id="gallery" class="container">
+      <h2>Photo Gallery</h2>
+      <p class="intro">Click the arrows or dots to change the image. The slideshow also changes automatically after five seconds.</p>
+      <div class="slider">
+        <img id="slideImage" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80" alt="Nature scenery">
+        <p class="caption" id="caption">Beautiful scenery</p>
+        <button class="slide-button" id="previous">&#10094;</button>
+        <button class="slide-button" id="next">&#10095;</button>
+      </div>
+      <div class="dots">
+        <button class="dot active" data-slide="0"></button>
+        <button class="dot" data-slide="1"></button>
+        <button class="dot" data-slide="2"></button>
+      </div>
+    </section>
+
+    <section id="video" class="video-section">
+      <div class="container video-grid">
+        <div>
+          <h2>Featured Video</h2>
+          <p>This area displays a video using the HTML video tag. Visitors can play, pause, change volume, and use full screen.</p>
+          <p>Later, you will replace this sample video with your own video from a <b>videos</b> folder.</p>
+        </div>
+        <video controls poster="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=80">
+          <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-a-green-mountain-1570/1080p.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Explore Zambia Website | Created with HTML, CSS and JavaScript</p>
+  </footer>
+
+  <script>
+    const images = [
+      { src: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80', text: 'Beautiful scenery' },
+      { src: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80', text: 'A peaceful destination' },
+      { src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80', text: 'Explore the outdoors' }
+    ];
+
+    let currentIndex = 0;
+    const slideImage = document.getElementById('slideImage');
+    const caption = document.getElementById('caption');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+      currentIndex = (index + images.length) % images.length;
+      slideImage.src = images[currentIndex].src;
+      caption.textContent = images[currentIndex].text;
+      dots.forEach(function(dot, dotIndex) { dot.classList.toggle('active', dotIndex === currentIndex); });
+    }
+
+    document.getElementById('next').addEventListener('click', function() { showSlide(currentIndex + 1); });
+    document.getElementById('previous').addEventListener('click', function() { showSlide(currentIndex - 1); });
+    dots.forEach(function(dot) { dot.addEventListener('click', function() { showSlide(Number(dot.dataset.slide)); }); });
+    setInterval(function() { showSlide(currentIndex + 1); }, 5000);
+  </script>
+</body>
+</html>
