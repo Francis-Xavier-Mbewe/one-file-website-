@@ -63,28 +63,6 @@
   </footer>
 
   <script>
-    const images = [
-      { src: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80', text: 'Beautiful scenery' },
-      { src: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80', text: 'A peaceful destination' },
-      { src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80', text: 'Explore the outdoors' }
-    ];
-
-    let currentIndex = 0;
-    const slideImage = document.getElementById('slideImage');
-    const caption = document.getElementById('caption');
-    const dots = document.querySelectorAll('.dot');
-
-    function showSlide(index) {
-      currentIndex = (index + images.length) % images.length;
-      slideImage.src = images[currentIndex].src;
-      caption.textContent = images[currentIndex].text;
-      dots.forEach(function(dot, dotIndex) { dot.classList.toggle('active', dotIndex === currentIndex); });
-    }
-
-    document.getElementById('next').addEventListener('click', function() { showSlide(currentIndex + 1); });
-    document.getElementById('previous').addEventListener('click', function() { showSlide(currentIndex - 1); });
-    dots.forEach(function(dot) { dot.addEventListener('click', function() { showSlide(Number(dot.dataset.slide)); }); });
-    setInterval(function() { showSlide(currentIndex + 1); }, 5000);
-  </script>
+     </script>
 </body>
 </html>
